@@ -75,7 +75,7 @@
 		height: 65%;
 	}
 }
-@media only screen and (min-width: 769px) and (min-height: 1366px) and (max-width: 1024px) {
+@media only screen and (min-height: 1024px) and (min-width: 1366px) {
 	.button-container,
 	.counter-container {
 		height: 10vh;
@@ -91,5 +91,23 @@
 	.button-container button {
 		height: 10vh;
 		font-size: 5rem;
+	}
+}
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+	.button-container,
+	.counter-container {
+		height: 10vh;
+		width: 50%;
+		font-size: 3rem;
+	}
+	.main-container {
+		font-size: 3rem;
+	}
+	.main-container img {
+		height: 60%;
+	}
+	.button-container button {
+		height: 10vh;
+		font-size: 4rem;
 	}
 }
