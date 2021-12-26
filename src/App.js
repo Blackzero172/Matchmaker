@@ -4,9 +4,8 @@ import React from "react";
 import CustomButton from "./components/CustomButton/CustomButton.components";
 import Counter from "./components/Counter/Counter.components";
 import api from "./components/api/api";
+
 class App extends React.Component {
-	plusCounterRef = React.createRef();
-	minusCounterRef = React.createRef();
 	state = { card: {}, approval: 0, discard: 0, avatarList: [] };
 	getNewCard = async () => {
 		const random = Math.floor(Math.random() * 10);
@@ -22,8 +21,7 @@ class App extends React.Component {
 		});
 		this.setState({ avatarList: avatar }, this.getNewCard);
 	}
-	approveDiscardCard = (e) => {
-		const key = e.target.getAttribute("counterkey");
+	approveDiscardCard = (key) => {
 		this.setState({ [key]: this.state[key] + 1 });
 		this.getNewCard();
 	};
@@ -41,10 +39,10 @@ class App extends React.Component {
 				<img src={this.state.card.avatar} alt="avatar" />
 				<p>{this.state.card.name}</p>
 				<div className="button-container">
-					<CustomButton onClick={this.approveDiscardCard} counterkey="discard" style={{ color: "red" }}>
+					<CustomButton onClick={() => this.approveDiscardCard("discard")} style={{ color: "red" }}>
 						<i className="fas fa-times" style={{ pointerEvents: "none" }}></i>
 					</CustomButton>
-					<CustomButton onClick={this.approveDiscardCard} counterkey="approval" style={{ color: "green" }}>
+					<CustomButton onClick={() => this.approveDiscardCard("approval")} style={{ color: "green" }}>
 						<i className="fas fa-check" style={{ pointerEvents: "none" }}></i>
 					</CustomButton>
 				</div>

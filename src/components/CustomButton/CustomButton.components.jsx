@@ -1,8 +1,8 @@
 import React from "react";
 
-const CustomButton = ({ text, children, onClick, counterkey, style }) => {
+const CustomButton = ({ text, children, onClick, style }) => {
 	return (
-		<button type="button" onClick={onClick} counterkey={counterkey} style={style}>
+		<button type="button" onClick={onClick} style={style}>
 			{children}
 			{text}
 		</button>
